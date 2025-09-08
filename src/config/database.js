@@ -1,14 +1,16 @@
 import sqlite3 from 'sqlite3';
 import fs from 'fs';
-import  path from 'path';
-import logger from '../utils/logger';
+import path from 'path';
+import logger from '../utils/logger.js';
 
 const sqlite = sqlite3.verbose();
 
 class Database {
   constructor() {
     this.db = null;
-    this.dbPath = process.env.DATABASE_PATH || '../database/expense_tracker.db';
+    // Use env path or default to src/database/expense_manager.db, always resolve to absolute path
+    const defaultPath = path.resolve('src/database/expense_manager.db');
+    this.dbPath = process.env.DATABASE_PATH ? path.resolve(process.env.DATABASE_PATH) : defaultPath;
   }
 
   // Initialize database connection
@@ -83,7 +85,7 @@ class Database {
   // Run query with parameters
   run(sql, params = []) {
     return new Promise((resolve, reject) => {
-      this.db.run(sql, params, function(err) {
+      this.db.run(sql, params, function (err) {
         if (err) {
           logger.error('Database run error:', err.message);
           reject(err);

@@ -1,8 +1,8 @@
 import express from 'express';
 const router = express.Router();
 
-import CategoryController from '../controllers/categoryController';
-import { optionalAuth } from '../middleware/auth';
+import CategoryController from '../controllers/categoryController.js';
+import { optionalAuth } from '../middleware/auth.js';
 
 // GET /api/categories - Get all categories (public endpoint with optional auth)
 router.get('/',

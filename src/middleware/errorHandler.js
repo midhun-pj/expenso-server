@@ -1,6 +1,6 @@
-import logger from './utils/logger.js';
+import logger from '../utils/logger.js';
 
-export default errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
@@ -59,3 +59,6 @@ export default errorHandler = (err, req, res, next) => {
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   });
 };
+
+
+export default errorHandler;

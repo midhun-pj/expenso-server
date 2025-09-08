@@ -1,10 +1,10 @@
 import express from 'express';
 const router = express.Router();
 
-import UploadController from '../controllers/uploadController';
-import { requireAuth } from '../middleware/auth';
-import { receiptUpload } from '../middleware/upload';
-import { validationRules, handleValidationErrors } from '../utils/validation';
+import UploadController from '../controllers/uploadController.js';
+import { requireAuth } from '../middleware/auth.js';
+import { receiptUpload } from '../middleware/upload.js';
+import { validationRules, handleValidationErrors } from '../utils/validation.js';
 
 // Apply authentication to all routes
 router.use(requireAuth);

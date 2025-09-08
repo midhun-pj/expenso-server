@@ -1,8 +1,8 @@
-import logger from '../utils/logger';
-import GroceryItemModel from '../models/GroceryItem';
-import UserModel from '../models/User';
-import BudgetModel from '../models/Budget';
-import ExpenseModel from '../models/Expense';
+import logger from '../utils/logger.js';
+import GroceryItemModel from '../models/GroceryItem.js';
+import UserModel from '../models/User.js';
+import BudgetModel from '../models/Budget.js';
+import ExpenseModel from '../models/Expense.js';
 
 class DashboardController {
   // Get dashboard overview

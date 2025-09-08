@@ -1,14 +1,19 @@
-import app from './app';
-import logger from './utils/logger';
+import app from './app.js';
+import logger from './utils/logger.js';
+
+import { database } from './config/database.js';
 
 const PORT = process.env.PORT || 3000;
 
-// Start server
-const server = app.listen(PORT, () => {
-  logger.info(`🚀 Expense Tracker API server running on port ${PORT}`);
-  logger.info(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-  logger.info(`🔗 API Base URL: http://localhost:${PORT}/api`);
-});
+async function startServer() {
+  await database.connect();
+  // Optionally: await database.initSchema();
+  app.listen(process.env.PORT || 3400, () => {
+    console.log(`Server running on port ${process.env.PORT || 3400}`);
+  });
+}
+
+startServer();
 
 // Graceful shutdown handling
 process.on('SIGTERM', () => {
@@ -34,5 +39,3 @@ process.on('unhandledRejection', (err, promise) => {
     process.exit(1);
   });
 });
-
-export default server;

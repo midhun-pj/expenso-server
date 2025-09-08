@@ -1,8 +1,8 @@
 
-import ExpenseModel from '../models/Expense';
-import GroceryItemModel from '../models/GroceryItem';
-import UserModel from '../models/User';
-import logger from '../utils/logger';
+import ExpenseModel from '../models/Expense.js';
+import GroceryItemModel from '../models/GroceryItem.js';
+import UserModel from '../models/User.js';
+import logger from '../utils/logger.js';
 
 class ExpenseController {
   // Create new expense

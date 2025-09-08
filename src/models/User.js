@@ -1,5 +1,5 @@
-import { database } from '../config/database';
-import logger from './utils/logger.js';
+import { database } from '../config/database.js';
+import logger from '../utils/logger.js';
 
 class UserModel {
   // Create or update user (for Auth0 integration)

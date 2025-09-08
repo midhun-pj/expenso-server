@@ -3,9 +3,9 @@ const router = express.Router();
 
 import logger from '../utils/logger.js';
 
-import UserModel from '../models/User';
+import UserModel from '../models/User.js';
 
-import { requireAuth } from '../middleware/auth';
+import { requireAuth } from '../middleware/auth.js';
 
 // GET /api/auth/profile - Get user profile
 router.get('/profile', requireAuth, async (req, res, next) => {

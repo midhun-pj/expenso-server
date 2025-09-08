@@ -1,8 +1,8 @@
 
-import { database } from '../config/database';
-import logger from '../utils/logger';
+import { database } from '../config/database.js';
+import logger from '../utils/logger.js';
 
-import ProductModel from './Product';
+import ProductModel from './Product.js';
 
 class GroceryItemModel {
   // Create grocery item

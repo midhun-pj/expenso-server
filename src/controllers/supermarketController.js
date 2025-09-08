@@ -1,7 +1,7 @@
 
 
-import logger from '../utils/logger';
-import SupermarketModel from '../models/Supermarket';
+import logger from '../utils/logger.js';
+import SupermarketModel from '../models/Supermarket.js';
 
 class SupermarketController {
   // Get all supermarkets

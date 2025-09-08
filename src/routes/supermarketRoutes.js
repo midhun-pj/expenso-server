@@ -1,9 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-import SupermarketController from '../controllers/supermarketController';
-import { requireAuth } from '../middleware/auth';
-import { validationRules, handleValidationErrors } from '../utils/validation';
+import SupermarketController from '../controllers/supermarketController.js';
+import { requireAuth } from '../middleware/auth.js';
+import { validationRules, handleValidationErrors } from '../utils/validation.js';
 
 // Apply authentication to all routes
 router.use(requireAuth);

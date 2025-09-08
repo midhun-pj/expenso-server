@@ -1,6 +1,6 @@
 
-import { database } from '../config/database';
-import logger from '../utils/logger';
+import { database } from '../config/database.js';
+import logger from '../utils/logger.js';
 
 class ExpenseModel {
   // Create new expense

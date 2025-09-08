@@ -1,7 +1,7 @@
 import path from 'path';
 import sharp from 'sharp';
 import fs from 'fs';
-import logger from './logger';
+import logger from './logger.js';
 
 class FileUtils {
   // Ensure directory exists

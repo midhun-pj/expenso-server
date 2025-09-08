@@ -8,7 +8,7 @@ CREATE TABLE users (
     email TEXT UNIQUE NOT NULL,
     username TEXT UNIQUE,
     external_auth_id TEXT UNIQUE NOT NULL, -- Auth provider user ID
-    auth_provider TEXT DEFAULT 'supabase', -- 'supabase', 'auth0', 'firebase'
+    auth_provider TEXT DEFAULT 'auth0', -- 'supabase', 'auth0', 'firebase'
     profile_image_url TEXT,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -173,18 +173,18 @@ CREATE INDEX idx_sessions_token ON user_sessions(session_token);
 CREATE INDEX idx_receipt_queue_status ON receipt_queue(processing_status);
 
 -- Insert default categories
-INSERT INTO categories (id, user_id, name, color, icon, is_income, parent_category_id) VALUES 
+INSERT INTO categories (id, user_id, name, color, icon, is_income) VALUES 
 -- Default expense categories (user_id will be set when user registers)
-(1, 0, 'Groceries', '#4CAF50', '🛒', FALSE, NULL),
-(2, 0, 'Transportation', '#2196F3', '🚗', FALSE, NULL),
-(3, 0, 'Entertainment', '#E91E63', '🎬', FALSE, NULL),
-(4, 0, 'Bills & Utilities', '#FF9800', '💡', FALSE, NULL),
-(5, 0, 'Healthcare', '#9C27B0', '🏥', FALSE, NULL),
-(6, 0, 'Dining Out', '#F44336', '🍽️', FALSE, NULL),
-(7, 0, 'Shopping', '#673AB7', '🛍️', FALSE, NULL),
-(8, 0, 'Travel', '#00BCD4', '✈️', FALSE, NULL),
+(1, 0, 'Groceries', '#4CAF50', '🛒', FALSE),
+(2, 0, 'Transportation', '#2196F3', '🚗', FALSE),
+(3, 0, 'Entertainment', '#E91E63', '🎬', FALSE),
+(4, 0, 'Bills & Utilities', '#FF9800', '💡', FALSE),
+(5, 0, 'Healthcare', '#9C27B0', '🏥', FALSE),
+(6, 0, 'Dining Out', '#F44336', '🍽️', FALSE),
+(7, 0, 'Shopping', '#673AB7', '🛍️', FALSE),
+(8, 0, 'Travel', '#00BCD4', '✈️', FALSE),
 -- Default income categories
-(9, 0, 'Salary', '#4CAF50', '💰', TRUE, NULL),
-(10, 0, 'Freelance', '#8BC34A', '💼', TRUE, NULL),
-(11, 0, 'Investment', '#CDDC39', '📈', TRUE, NULL),
-(12, 0, 'Other Income', '#FFC107', '💳', TRUE, NULL);
+(9, 0, 'Salary', '#4CAF50', '💰', TRUE),
+(10, 0, 'Freelance', '#8BC34A', '💼', TRUE),
+(11, 0, 'Investment', '#CDDC39', '📈', TRUE),
+(12, 0, 'Other Income', '#FFC107', '💳', TRUE);

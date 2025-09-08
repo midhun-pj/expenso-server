@@ -1,7 +1,7 @@
-import GroceryItemModel from '../models/GroceryItem';
-import ExpenseModel from '../models/Expense';
-import UserModel from '../models/User';
-import logger from '../utils/logger';
+import GroceryItemModel from '../models/GroceryItem.js';
+import ExpenseModel from '../models/Expense.js';
+import UserModel from '../models/User.js';
+import logger from '../utils/logger.js';
 
 class GroceryController {
   // Create grocery item

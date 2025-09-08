@@ -24,6 +24,7 @@ import dashboardRoutes from './routes/dashboardRoutes.js';
 
 import currenciesRoutes from './routes/currencyRoutes.js';
 import productsRoutes from './routes/productRoutes.js';
+import categoryRoutes from './routes/categoryRoutes.js';
 
 const app = express();
 
@@ -99,6 +100,7 @@ app.use('/api/income', incomeRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/currencies', currenciesRoutes);
+app.use('/api/categories', categoryRoutes);
 
 app.use('/api/products', productsRoutes);
 

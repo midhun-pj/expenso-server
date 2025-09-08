@@ -1,9 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
-import DashboardController from '../controllers/dashboardController';
+import DashboardController from '../controllers/dashboardController.js';
 
-import { requireAuth } from '../middleware/auth';
+import { requireAuth } from '../middleware/auth.js';
 
 // Apply authentication to all routes
 router.use(requireAuth);

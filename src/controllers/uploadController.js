@@ -1,15 +1,14 @@
 import multer from 'multer';
 import path from 'path';
 import fs from 'fs'
-import UserModel from '../models/User';
-import SupermarketModel from '../models/Supermarket';
-import GroceryItemModel from '../models/GroceryItem';
-import ExpenseModel from '../models/Expense';
-i
+import UserModel from '../models/User.js';
+import SupermarketModel from '../models/Supermarket.js';
+import GroceryItemModel from '../models/GroceryItem.js';
+import ExpenseModel from '../models/Expense.js';
 
-import ocrService from '../services/ocrService';
-import FileUtils from '../utils/fileUtils';
-import logger from '../utils/logger';
+import ocrService from '../services/ocrService.js';
+import FileUtils from '../utils/fileUtils.js';
+import logger from '../utils/logger.js';
 
 class UploadController {
   // Upload and process receipt
